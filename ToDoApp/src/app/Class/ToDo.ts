@@ -10,7 +10,7 @@ export class ToDo {
       this.id = id;
       this.titel = titel;
       this.description = description;
-      this.done = false;
+      this.done = done;
      }
    
    }

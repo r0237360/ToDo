@@ -25,16 +25,24 @@ export class TodoService {
     new ToDo(3, 'Auto wassen', 'Was de auto',false),
     new ToDo(4, 'Afval', 'Zet afval buiten',true),
     new ToDo(5, 'Betaal rekeningen', 'Betaal openstaande rekeningen',false),
-    new ToDo(1, 'Belastingen', 'Vul je belastingaangifte in',false),
+    new ToDo(6, 'Belastingen', 'Vul je belastingaangifte in',false),
   
   ]
 
-
+  // returns een array met alle items
   getAllTodos(): ToDo[]{
     return this.todos;
   }  
+  // returns een array met alleen de items waar done = true 
+  getOnlyTodos(): ToDo[]{
+    return this.todos.filter(t => t.done === false);
+  }
 
-  
+  // returns een array met alleen de items waar done = false
+  getOnlyDones(): ToDo[]{
+    return this.todos.filter(f => f.done === true);
+  }
+
 
 
 }

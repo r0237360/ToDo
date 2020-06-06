@@ -1,1 +1,12 @@
 <p>todos works! from todos component</p>
+
+<h2>Hieronder vind je een lijst met taken die je nog moet uitvoeren!</h2>
+
+<ng-container *ngIf="todos.length > 0; else elseBlock">
+  <ul *ngFor="let todo of todos">
+    <li>{{ todo.titel }}</li>
+  </ul>
+</ng-container>
+<ng-template #elseBlock>
+  <h3>Je hebt alle taken voltooid! Relax, tijd voor een fris pintje.</h3>
+</ng-template>

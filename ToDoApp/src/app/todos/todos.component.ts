@@ -16,7 +16,7 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
     //calling the data from the service into the local array
-    this.todos = this.todoService.getAllTodos();
+    this.todos = this.todoService.getOnlyTodos();
   }
 
 }

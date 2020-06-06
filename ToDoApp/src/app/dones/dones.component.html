@@ -1,1 +1,12 @@
 <p>dones works! from dones component</p>
+
+<h2>Hieronder vind je een lijst met taken die al uitgevoerd zijn!</h2>
+
+<ng-container *ngIf="todos.length > 0; else elseBlock">
+  <ul *ngFor="let done of todos">
+    <li>{{ done.titel }}</li>
+  </ul>
+</ng-container>
+<ng-template #elseBlock>
+  <h3>Je hebt nog geen taken voltooid! Je moet dringend aan het werk!</h3>
+</ng-template>

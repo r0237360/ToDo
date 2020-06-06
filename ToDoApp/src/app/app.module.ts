@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DonesComponent } from './dones/dones.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoService } from './Service/todo.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TodoService } from './Service/todo.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

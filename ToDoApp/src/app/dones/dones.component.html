@@ -1,7 +1,9 @@
 <p>dones works! from dones component</p>
+<h2>Done list</h2>
 
-<h2>Hieronder vind je een lijst met taken die al uitgevoerd zijn!</h2>
-
+<!-- Als er done items zijn (todos array lengte is groter dan 0) loop door de todos array en geef voor elk item het titel atribuut weer. 
+Als er geen items zijn is er een tekst. 
+ngIf directive voor de if conditie / ngFor directive om door de array te loopen. -->
 <ng-container *ngIf="todos.length > 0; else elseBlock">
   <ul *ngFor="let done of todos">
     <li>{{ done.titel }}</li>

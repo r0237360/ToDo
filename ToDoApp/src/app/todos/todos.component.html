@@ -1,10 +1,22 @@
 <p>todos works! from todos component</p>
 
-<h2>Hieronder vind je een lijst met taken die je nog moet uitvoeren!</h2>
+<h2>ToDo list</h2>
 
+<!-- Als er todo items zijn (todos array lengte is groter dan 0) loop door de todos array en geef voor elk item het titel atribuut weer. 
+Als er geen items zijn is er een tekst. 
+ngIf directive voor de if conditie / ngFor directive om door de array te loopen. -->
 <ng-container *ngIf="todos.length > 0; else elseBlock">
   <ul *ngFor="let todo of todos">
-    <li>{{ todo.titel }}</li>
+    <li><div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="todo.id" unchecked="">
+        <label class="custom-control-label" for="todo.id">{{todo.titel}}</label>
+      </div></li> 
+    
+    
+   
+    
+
+
   </ul>
 </ng-container>
 <ng-template #elseBlock>

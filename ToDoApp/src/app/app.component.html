@@ -1,5 +1,13 @@
 <span>{{ title }} app is running!</span>
 
+<!-- 
+How to get started with Angular Material can be found here : https://material.angular.io/guide/getting-started 
+The page also contains the install command : ng add @angular/material  
+Information about mat-tab found on https://material.angular.io/components/tabs/overview
+To use mat tab i have added in app.modules.ts "import {MatTabsModule} from '@angular/material/tabs"
+and added MatTabsModule to the Imports.
+The code snippet is also available on the webpage.
+ -->
 <mat-tab-group>
   <mat-tab label="To Do items">
     <ng-template matTabContent>
@@ -14,13 +22,12 @@
 </mat-tab-group>
 
 
-    
 
     
 
     
 
-   <!-- This code block "borrowed" from bootstrap doesn't work -->
+   <!-- This code block "borrowed" from bootstrap doesn't work it uses href to diffrent pages and this is not used in angular-->
  
 <!--     <ul class="nav nav-tabs">
       <li class="nav-item">

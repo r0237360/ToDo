@@ -1,27 +1,27 @@
-
+<span>{{ title }} app is running!</span>
 
 <mat-tab-group>
-  <mat-tab label="First">
+  <mat-tab label="To Do items">
     <ng-template matTabContent>
-      The First Content
+      <app-todos></app-todos>
     </ng-template>
   </mat-tab>
-  <mat-tab label="Second">
+  <mat-tab label="Done items">
     <ng-template matTabContent>
-      The Second Content
+      <app-dones></app-dones>
     </ng-template>
   </mat-tab>
 </mat-tab-group>
 
 
-    <span>{{ title }} app is running!</span>
+    
 
-    <app-todos></app-todos>
+    
 
-    <app-dones></app-dones>
+    
 
-   
-
+   <!-- This code block "borrowed" from bootstrap doesn't work -->
+ 
 <!--     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#home">Home</a>

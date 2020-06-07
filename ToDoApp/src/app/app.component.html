@@ -1,6 +1,17 @@
 
 
-
+<mat-tab-group>
+  <mat-tab label="First">
+    <ng-template matTabContent>
+      The First Content
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Second">
+    <ng-template matTabContent>
+      The Second Content
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
 
 
     <span>{{ title }} app is running!</span>
@@ -8,6 +19,9 @@
     <app-todos></app-todos>
 
     <app-dones></app-dones>
+
+   
+
 <!--     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#home">Home</a>

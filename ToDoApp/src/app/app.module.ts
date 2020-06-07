@@ -7,6 +7,8 @@ import { DonesComponent } from './dones/dones.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoService } from './Service/todo.service';
 import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

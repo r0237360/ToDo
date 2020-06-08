@@ -9,6 +9,7 @@ import { TodoService } from './Service/todo.service';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

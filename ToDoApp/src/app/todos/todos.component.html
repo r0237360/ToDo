@@ -8,10 +8,16 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 <ng-container *ngIf="todos.length > 0; else elseBlock">
   <ul *ngFor="let todo of todos">
     <li>
+     <!--  Using angular mat : <mat-checkbox></mat-checkbox>
+      Doc: https://material.angular.io/components/checkbox/overview 
+      Also import {MatCheckboxModule} from '@angular/material/checkbox' in app.modules ts"; -->
+      <mat-checkbox>{{todo.titel}}</mat-checkbox>
+
+      <!-- THis a way to create a checkbox
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="todo.id" unchecked="">
-        <label class="custom-control-label" for="todo.id">{{todo.titel}}</label>
-      </div>
+        <input type="checkbox" class="custom-control-input"  >
+        <label class="custom-control-label" >{{todo.titel}}</label>
+      </div> -->
     </li> 
   </ul>
 </ng-container>

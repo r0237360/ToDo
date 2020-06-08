@@ -5,6 +5,8 @@ import { ToDo } from '../Class/ToDo';
   providedIn: 'root'
 })
 export class TodoService {
+  getid: number;
+  
 
   constructor() { }
 
@@ -44,5 +46,26 @@ export class TodoService {
   }
 
 
+
+  // Working on 
+  getToDoById(id: number): ToDo{
+    let getid: number;
+    getid = id;
+    return this.todos.filter(i => i.id === id)
+    
+  }
+  
+  // Working on
+  updateToDoById(id: number){
+  this.getToDoById(id)
+  }
+
+  // Working on
+  flipDoneSwitch(todo){
+  this.updateToDoById(todo.id);
+
+  }
+  
+  
 
 }

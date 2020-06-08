@@ -19,6 +19,10 @@ export class TodosComponent implements OnInit {
     this.todos = this.todoService.getOnlyTodos();
   }
 
-  
+  toDoChecked(todo){
+  this.todoService.flipDoneSwitch(todo);  
+  }
+
+ 
 
 }

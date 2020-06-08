@@ -10,13 +10,15 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
     <li>
      <!--  Using angular mat : <mat-checkbox></mat-checkbox>
       Doc: https://material.angular.io/components/checkbox/overview 
-      Also import {MatCheckboxModule} from '@angular/material/checkbox' in app.modules ts"; -->
+      Also import {MatCheckboxModule} from '@angular/material/checkbox' in app.modules ts"; 
+      MatCheckbox uses also a theme that arranges the color change on checked event.
+      Theme file can be found in "custom-theme.scss" -->
       <mat-checkbox>{{todo.titel}}</mat-checkbox>
 
       <!-- THis a way to create a checkbox
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input"  >
-        <label class="custom-control-label" >{{todo.titel}}</label>
+        <input type="checkbox" + additional atributes >
+        <label >{{todo.titel}}</label>
       </div> -->
     </li> 
   </ul>

@@ -15,14 +15,19 @@ export class TodosComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-    //calling the data from the service into the local array
+    //get the data from the service into the local array
     this.todos = this.todoService.getOnlyTodos();
   }
 
+  // methode aangeroepen door checkbox aan te vinken
   toDoChecked(todo){
   this.todoService.flipDoneSwitch(todo);  
   }
 
+  delTodo(todo){
+    this.todoService.deleteTodo(todo);
+    
+  }
  
 
 }

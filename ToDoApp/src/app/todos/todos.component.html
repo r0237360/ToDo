@@ -14,7 +14,7 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
       MatCheckbox uses also a theme that arranges the color change on checked event.
       Theme file can be found in "custom-theme.scss" -->
       <mat-checkbox #{{todo.id}} labelPosition="after"  (click)="toDoChecked(todo)" >{{todo.titel}}</mat-checkbox>
-
+      <p><button (click)="delTodo(todo)">Verwijder dit item</button></p>
       <!-- THis a way to create a checkbox
       <div class="custom-control custom-checkbox">
         <input type="checkbox" + additional atributes >

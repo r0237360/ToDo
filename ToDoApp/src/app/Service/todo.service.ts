@@ -13,9 +13,9 @@ export class TodoService {
  
  
   //Verschillende manier om array op te vullen
-  // this.todos.ToDo.push(new ToDo(1, "Winkelen", "Ga naar winkel", true));
+  // this.todos.ToDo.push(new ToDo(1, "Afval", "zet afval buiten", true));
   /* this.todos.ToDo = [
-    new ToDo(1, 'Winkelen', 'Ga naar winkel', true),
+    new ToDo(1, 'Afval', 'zet afval buiten', true),
     
   ]
  */
@@ -60,13 +60,39 @@ export class TodoService {
     Object.assign(todo, values);
     return todo;
   }
-  // Checkbox checked roept deze methode op om done attribuut op "false" te zetten.
+  // todo methode voor checkbox checked roept deze methode op om done attribuut op "false" te zetten.
   flipDoneSwitch(todo: ToDo){
     let justDoneTodo = this.updateTodoById(todo.id,{
       done: !todo.done
     });
     return justDoneTodo;
   }
+
+
+  /* Removes the todo item from the list. 
+  splice() method changes the content of an array, adding new elements while removing old elements.
+
+  Syntax
+    array.splice(index, howMany, [element1][, ..., elementN]);
+
+Parameter Details
+    index − Index at which to start changing the array.
+    howMany − An integer indicating the number of old array elements to remove. If howMany is 0, no elements are removed.
+    element1, ..., elementN − The elements to add to the array. If you don't specify any elements, splice simply removes the elements from the array.
+
+Return Value
+Returns the extracted array based on the passed parameters. */
+ 
+  deleteTodo(toDo: ToDo) {
+    const toDoId = this.todos.findIndex(i => i.id === toDo.id);
+    this.todos.splice(toDoId, 1);
+
+    return this.todos;
+  }
+
+
+
+
 }
   
   

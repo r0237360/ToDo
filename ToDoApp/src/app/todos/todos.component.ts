@@ -21,13 +21,20 @@ export class TodosComponent implements OnInit {
 
   // methode aangeroepen door checkbox aan te vinken
   toDoChecked(todo){
-  this.todoService.flipDoneSwitch(todo);  
+    this.todoService.flipDoneSwitch(todo); 
+  // Reload array na checkbox checked, om nieuwe data gegevens te laden. 
+    this.reloadData();
   }
 
+  //methode aangeroepen door "remove item" button
   delTodo(todo){
     this.todoService.deleteTodo(todo);
-    
+  // Reload array na het verwijderen van een item; nieuwe data gegevens laden.
+    this.reloadData();
   }
  
+  reloadData(){
+    this.todos = this.todoService.getOnlyTodos();  
+  }
 
 }

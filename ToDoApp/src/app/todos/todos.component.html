@@ -29,8 +29,9 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 </ng-template>
 
 <label>Een nieuwe todo ? </label>
-<p><input size="35" #CreateTodoTitel type="text" placeholder="vul hier de titel in" autofocus=""></p>
-<input size="100" #CreateTodoBeschrijving type="text" placeholder="vul hier een beschrijving in" autofocus="">
+<!-- "size" parameter om het aantal karakters te bepalen (indien je met DB werkt match de kolom lengte van de database.) -->
+<p><input size="35" #CreateTodoTitel type="text" placeholder="vul hier de titel in" ></p>
+<p><input size="100" #CreateTodoBeschrijving type="text" placeholder="vul hier een beschrijving in" > </p>
 <p><button>Create new Todo</button></p>
 
 

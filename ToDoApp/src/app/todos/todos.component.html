@@ -5,21 +5,27 @@
 <!-- Als er todo items zijn (todos array lengte is groter dan 0) loop door de todos array en geef voor elk item het titel atribuut weer. 
 Als er geen items zijn is er een informatieve tekst. 
 ngIf directive voor de if conditie / ngFor directive om door de array te loopen. -->
+
 <ng-container *ngIf="todos.length > 0; else elseBlock">
   <ul *ngFor="let todo of todos">
     <li>
+       <!-- THis a way to create a checkbox
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" + additional atributes >
+        <label >{{todo.titel}}</label>
+      </div> -->
+
      <!--  Using angular mat : <mat-checkbox></mat-checkbox>
       Doc: https://material.angular.io/components/checkbox/overview 
       Also import {MatCheckboxModule} from '@angular/material/checkbox' in app.modules ts"; 
       MatCheckbox uses also a theme that arranges the color change on checked event.
       Theme file can be found in "custom-theme.scss" -->
-      <mat-checkbox #{{todo.id}} labelPosition="after"  (click)="toDoChecked(todo)" >{{todo.titel}}</mat-checkbox>
-      <p><button (click)="delTodo(todo)">Verwijder dit item</button></p>
-      <!-- THis a way to create a checkbox
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" + additional atributes >
-        <label >{{todo.titel}}</label>
-      </div> -->
+      <p><mat-checkbox #{{todo.id}} labelPosition="after"  (click)="toDoChecked(todo)" >{{todo.titel}}</mat-checkbox></p>
+     
+      <!-- <p><button (click)="delTodo(todo)">Verwijder dit item</button></p> -->
+      <p><button (click)="delTodo(todo)"   mat-raised-button>Verwijder dit item</button></p>
+      <br>
+     
     </li> 
   </ul>
 </ng-container>
@@ -27,11 +33,36 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 <ng-template #elseBlock>
   <h3>Je hebt alle taken voltooid! Relax, tijd voor een fris pintje.</h3>
 </ng-template>
+<br>
+<br>
+<h3>Een nieuwe todo ? <h3>
 
-<label>Een nieuwe todo ? </label>
-<!-- "size" parameter om het aantal karakters te bepalen (indien je met DB werkt match de kolom lengte van de database.) -->
-<p><input size="35" #CreateTodoTitel type="text" placeholder="vul hier de titel in" ></p>
-<p><input size="100" #CreateTodoBeschrijving type="text" placeholder="vul hier een beschrijving in" > </p>
-<p><button>Create new Todo</button></p>
+<!-- "size" parameter om het aantal karakters te bepalen (indien je met DB werkt match de kolom lengte van de database.)
+<p><input size="35" #createTodoTitel type="text" placeholder="vul hier de titel in" required></p>
+
+<p><input size="100" #createTodoBeschrijving type="text" placeholder="vul hier een beschrijving in"  required> </p>
+
+<p><button (click)="createTodo(createTodoTitel.value, createTodoBeschrijving.value)">Create new Todo</button></p> 
+ 
+ -->
+<br>
 
 
+<!-- Normale input en button omgewerkt naar Mat-Angular -->
+<!--Form field en input: https://material.angular.io/components/form-field/overview -->
+
+<mat-form-field class="titel-form" hintLabel="Verplicht veld met max 35 characters" appearance="fill" >
+  <mat-label>Geef een titel voor je todo</mat-label>
+  <input matInput #createTodoTitel maxlength="35" placeholder="Ex. Afwassen" required>
+  <mat-hint align="end">{{createTodoTitel.value?.length || 0}}/35</mat-hint>
+</mat-form-field>
+<br>
+<br>
+<mat-form-field class="description-form" hintLabel="Verplicht veld met max 100 characters" appearance="fill" >
+  <mat-label>Geef een beschrijving voor je todo</mat-label>
+  <input matInput #createTodoBeschrijving maxlength="100" placeholder="Ex. Ik moet afwassen met Dreft want dat gaat langer mee"  required>
+  <mat-hint align="end">{{createTodoBeschrijving.value?.length || 0}}/100</mat-hint>
+</mat-form-field>
+<br>
+<br>
+<button (click)="createTodo(createTodoTitel.value, createTodoBeschrijving.value)"   mat-raised-button>Create new Todo</button>

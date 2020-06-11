@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { DonesComponent } from './dones/dones.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoService } from './Service/todo.service';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     FormsModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

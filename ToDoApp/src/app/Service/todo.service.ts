@@ -28,7 +28,11 @@ export class TodoService {
     new ToDo(4, 'Winkelen', 'Ga naar de winkel',true),
     new ToDo(5, 'Belastingen', 'Vul je belastingaangifte in',false),
     new ToDo(6, 'Auto wassen', 'Was de auto',false),
-  ]
+  ];
+
+   // initialize the maxid parameter
+   maxid: number = 6;
+
 
   // returns een array met alle ToDo items
   getAllTodos(): ToDo[]{
@@ -90,10 +94,22 @@ Returns the extracted array based on the passed parameters. */
     return this.todos;
   }
 
+  getHighestTodoId():number{
+    this.getAllTodos().forEach(todo => { if (todo.id > this.maxid) {
+         this.maxid = todo.id;
+       }
+    } );
+    return this.maxid + 1;
+   }
 
+   newTodo(todo: ToDo){
+   if(!todo.id){
+    todo.id = this.getHighestTodoId();
+   }
+   this.todos.push(todo);
+   }
 
-
-}
+  }
   
   
 

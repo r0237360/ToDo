@@ -35,6 +35,8 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 </ng-template>
 <br>
 <br>
+
+
 <h3>Een nieuwe todo ? <h3>
 
 <!-- "size" parameter om het aantal karakters te bepalen (indien je met DB werkt match de kolom lengte van de database.)
@@ -66,3 +68,8 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 <br>
 <br>
 <button (click)="createTodo(createTodoTitel.value, createTodoBeschrijving.value)"   mat-raised-button>Create new Todo</button>
+
+
+<h1>***!!! Onderstaande code komt van de tododetail component !!!*** </h1>
+
+<app-tododetail [parentdata]="todos"></app-tododetail>

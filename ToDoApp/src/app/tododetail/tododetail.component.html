@@ -1,0 +1,29 @@
+<h3>tododetail works!</h3>
+
+<ng-container *ngIf="tododetail.length > 0; else elseBlock">
+    <ul *ngFor="let todo of tododetail">
+      <li>
+         <!-- THis a way to create a checkbox
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" + additional atributes >
+          <label >{{todo.titel}}</label>
+        </div> -->
+  
+       <!--  Using angular mat : <mat-checkbox></mat-checkbox>
+        Doc: https://material.angular.io/components/checkbox/overview 
+        Also import {MatCheckboxModule} from '@angular/material/checkbox' in app.modules ts"; 
+        MatCheckbox uses also a theme that arranges the color change on checked event.
+        Theme file can be found in "custom-theme.scss" -->
+        <p><mat-checkbox #{{todo.id}} labelPosition="after"   >{{todo.titel}}</mat-checkbox></p>
+       
+        <!-- <p><button (click)="delTodo(todo)">Verwijder dit item</button></p> -->
+        <p><button  mat-raised-button>Verwijder dit item</button></p>
+        <br>
+       
+      </li> 
+    </ul>
+  </ng-container>
+
+  <ng-template #elseBlock>
+    <h3>Je hebt alle taken voltooid! Relax, tijd voor een fris pintje.</h3>
+  </ng-template>

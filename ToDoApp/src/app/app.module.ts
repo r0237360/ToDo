@@ -12,12 +12,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { TododetailComponent } from './tododetail/tododetail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DonesComponent,
-    TodosComponent
+    TodosComponent,
+    TododetailComponent
   ],
   imports: [
     BrowserModule,

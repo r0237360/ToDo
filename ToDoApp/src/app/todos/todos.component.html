@@ -1,4 +1,4 @@
-<p>todos works! from todos component</p>
+<!-- <p>todos works! from todos component</p> -->
 
 <h2>ToDo list</h2>
 
@@ -9,23 +9,7 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 <ng-container *ngIf="todos.length > 0; else elseBlock">
   <ul *ngFor="let todo of todos">
     <li>
-       <!-- THis a way to create a checkbox
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" + additional atributes >
-        <label >{{todo.titel}}</label>
-      </div> -->
-
-     <!--  Using angular mat : <mat-checkbox></mat-checkbox>
-      Doc: https://material.angular.io/components/checkbox/overview 
-      Also import {MatCheckboxModule} from '@angular/material/checkbox' in app.modules ts"; 
-      MatCheckbox uses also a theme that arranges the color change on checked event.
-      Theme file can be found in "custom-theme.scss" -->
-      <p><mat-checkbox #{{todo.id}} labelPosition="after"  (click)="toDoChecked(todo)" >{{todo.titel}}</mat-checkbox></p>
-     
-      <!-- <p><button (click)="delTodo(todo)">Verwijder dit item</button></p> -->
-      <p><button (click)="delTodo(todo)"   mat-raised-button>Verwijder dit item</button></p>
-      <br>
-     
+      {{todo.titel}}
     </li> 
   </ul>
 </ng-container>
@@ -35,6 +19,10 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 </ng-template>
 <br>
 <br>
+
+
+
+<app-tododetail (childEvent)="todos=$event" [parentdata]="todos"></app-tododetail>
 
 
 <h3>Een nieuwe todo ? <h3>
@@ -70,6 +58,3 @@ ngIf directive voor de if conditie / ngFor directive om door de array te loopen.
 <button (click)="createTodo(createTodoTitel.value, createTodoBeschrijving.value)"   mat-raised-button>Create new Todo</button>
 
 
-<h1>***!!! Onderstaande code komt van de tododetail component !!!*** </h1>
-
-<app-tododetail [parentdata]="todos"></app-tododetail>

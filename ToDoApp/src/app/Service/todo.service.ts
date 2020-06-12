@@ -101,7 +101,7 @@ Returns the extracted array based on the passed parameters. */
     } );
     return this.maxid + 1;
    }
-
+ 
    newTodo(todo: ToDo){
    if(!todo.id){
     todo.id = this.getHighestTodoId();

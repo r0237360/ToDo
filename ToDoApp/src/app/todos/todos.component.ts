@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../Service/todo.service';
 import { ToDo } from '../Class/ToDo';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,14 +15,26 @@ export class TodosComponent implements OnInit {
   public todos = [];
   //initializing a todo object.
   nieuweTodo: ToDo;
+  NewTodoForm: FormGroup;
 
    //constructor with DI "consuming" the todo service
-  constructor(private todoService: TodoService) { }
+   // constructor with DI introducing FormBuilder 
+  constructor(private todoService: TodoService, private fb: FormBuilder) {
+    this.createForm();
+   }
 
   ngOnInit(): void {
     //get the data from the service into the local array
     this.todos = this.todoService.getOnlyTodos();
   }
+
+  createForm() {
+    this.NewTodoForm = this.fb.group({
+       titel: ['', Validators.required],
+       omschrijving: ['', Validators.required,]
+    });
+  }
+
 
   /* email = new FormControl('', [Validators.required, Validators.email]);
 
